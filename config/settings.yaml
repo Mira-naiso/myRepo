@@ -1,0 +1,11 @@
+incident_thresholds:
+  triggered_minutes: 30
+  acknowledged_hours: 2
+
+excluded_services:
+  - "NORMAL Severity Airflow DI"
+  - "CRITICAL Severity Airflow DA"
+  - "NORMAL Severity Airflow DO"
+  - "HIGH Severity Airflow DO"
+  - "HIGH Severity Airflow DI"
+  - "HIGH Severity Airflow DU"

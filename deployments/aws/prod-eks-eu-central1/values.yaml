@@ -1,0 +1,4 @@
+environment: prod-eks-eu-central1
+
+observability:
+  environment: prod-eks-eu-central1
