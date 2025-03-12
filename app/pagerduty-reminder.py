@@ -69,19 +69,21 @@ def is_within_working_hours() -> bool:
 
 def send_to_slack(message):
     """
-    Отправляет сообщение в Slack и возвращает thread_ts, если сообщение успешно отправлено.
+    Отправляет сообщение в Slack и возвращает thread_ts, если успешно.
     """
-    if not is_within_working_hours():
-        logger.info(f"Вне рабочего времени (7:00-14:00 UTC). Сообщение не отправлено: {message}")
-        return None
+    url = "https://slack.com/api/chat.postMessage"
+    headers = {
+        'Authorization': f'Bearer {SLACK_BOT_TOKEN}',
+        'Content-Type': 'application/json',
+    }
+    payload = {
+        'channel': SLACK_CHANNEL,
+        'text': message
+    }
 
-    payload = {'text': message}
     try:
-        response = requests.post(SLACK_WEBHOOK_URL, data=json.dumps(payload), headers={'Content-Type': 'application/json'}, timeout=10)
-        response.raise_for_status()
+        response = requests.post(url, json=payload, headers=headers, timeout=10)
         response_data = response.json()
-        
-        # Если сообщение успешно отправлено, возвращаем thread_ts
         if response_data.get("ok"):
             return response_data.get("ts")  # thread_ts
         else:
@@ -90,6 +92,7 @@ def send_to_slack(message):
     except Exception as e:
         logger.error(f'Ошибка отправки в Slack: {e}')
         return None
+
 
 def send_to_slack_thread(message, thread_ts):
     """
