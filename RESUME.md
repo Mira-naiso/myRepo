@@ -15,7 +15,7 @@ Versatile engineer with solid experience in DevOps, SRE, and SysOps. Skilled in 
 
 ## 🧳 Work Experience
 
-### SRE Engineer  
+### SRE Engineer    
 **inDrive**, Almaty (hybrid) — _May 2023 – Present_  
 - Designed and implemented monitoring and alerting systems using Prometheus, Alertmanager, and Grafana  
 - Covered weak points with alerts, visualized service behavior, and automated manual tasks  
@@ -27,6 +27,9 @@ Versatile engineer with solid experience in DevOps, SRE, and SysOps. Skilled in 
 - Participated in 24/7 on-call rotation, conducted RCA, and wrote postmortems  
 - Supported development teams with infrastructure requests, explained complex systems clearly
 
+**What value did I bring?**  
+Covered weak points in the infrastructure with alerts for the monitoring team, set up service behavior visualization, and fully automated the team’s manual workflows. This led to a reduction in lost orders and improved overall service stability. Assisted in migrating from a monolithic to a microservices architecture. I also support development teams with infrastructure-related tasks and issue resolution.
+
 ### System Administrator / DevOps Engineer  
 **PKR LLC**, Saint Petersburg — _January 2019 – May 2023_  
 - Introduced GitLab version control system  
@@ -36,6 +39,9 @@ Versatile engineer with solid experience in DevOps, SRE, and SysOps. Skilled in 
 - Managed access control and monitoring with Zabbix and Grafana  
 - Maintained and configured web servers (Nginx, Apache), wrote technical documentation  
 - Supported internal users: local networks, messengers, task automation, Asterisk-based VoIP
+
+**What value did I bring?**  
+Improved system stability and developer productivity through automation, enhanced visibility through centralized logging and monitoring, and ensured continuity of critical internal services.
 
 ---
 
