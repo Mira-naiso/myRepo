@@ -44,9 +44,6 @@ class GetDataFromZabbixItem(Settings):
 
     @staticmethod
     def _create_data_time() -> (int, int):
-        """
-        Create ints for "now" and "-730 days" time.
-        """
         return (
             int(
                 mktime(
