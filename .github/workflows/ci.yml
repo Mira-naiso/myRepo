@@ -1,0 +1,33 @@
+name: test CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: action/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buldx-action@v3
+
+      - name: LOGIN to registry
+        run: docker login ghcr.io -u "{{ secret.GHCR_USERNAME }}" --password-stdin
+
+      - name: Build backend image
+        run: |
+          docker build -t $IMAGE_NAME:${{ github.sha }} ./backend
+
+      - name: Push image
+        run: docker push $IMAGE_NAME:${{ github.sha }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: deploy
+        run: echo "here will be ssh deploy"
